@@ -1,0 +1,56 @@
+﻿<Window x:Class="Prakt18_praktika_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prakt18_praktika_"
+        mc:Ignorable="d"
+        Title="MainWindow" x:Name="mainwindow" Height="481" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" MinHeight="481" MinWidth="800" Initialized="Window_Initialized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="321*"/>
+            <RowDefinition Height="124.04"/>
+        </Grid.RowDefinitions>
+        <Menu Margin="0,1,0,1">
+            <MenuItem Header="Таблица" x:Name="tab1">
+                <MenuItem Header="Добавить" Click="AddToy_Button"></MenuItem>
+                <MenuItem Header="Изменить" Click="EditToy_Button"></MenuItem>
+                <MenuItem Header="Просмотр" Click="SeeToy_Button"></MenuItem>
+                <MenuItem Header="Удалить" Click="DeleteToy_Button"></MenuItem>
+                <MenuItem Header="Сбросить фильтр" Click="DeleteFilter_Button"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Справка" Click="Spravka"></MenuItem>
+            <MenuItem Header="Выход" Click="Quit"></MenuItem>
+        </Menu>
+        <DataGrid x:Name="ToyCollection" Margin="0,0,0,2" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="4*" Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Название" Width="15*" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Width="10*" Header="Цена руб." Binding="{Binding Price}"></DataGridTextColumn>
+                <DataGridTextColumn Width="8*" Header="Количество" Binding="{Binding Kol}"></DataGridTextColumn>
+                <DataGridTextColumn Width="15*" Header="Мин. Возрастной рейтинг" Binding="{Binding AgeCategory}"></DataGridTextColumn>
+                <DataGridTextColumn Width="12*" Header="Завод" Binding="{Binding FactoryName}"></DataGridTextColumn>
+                <DataGridTextColumn Width="12*" Header="Город Произод." Binding="{Binding CityFactory}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <GroupBox Header="Сортировка" Grid.Row="2" Margin="0,0,0,10" HorizontalAlignment="Left" Width="317" Height="111" VerticalAlignment="Bottom">
+            <Grid>
+                <Button Content="Цена &gt;500 руб." HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" FontSize="16" Click="SortPrice_Button"/>
+                <Button Content="Общ.с огр. ответств" HorizontalAlignment="Left" Margin="26,40,0,0" VerticalAlignment="Top" FontSize="16" Click="ProizvodFilter_Button"/>
+                <Button HorizontalAlignment="Left" Margin="171,10,0,0" VerticalAlignment="Top" FontSize="16" Content="Цена &lt;500 руб." Click="Price500Menee_Button"/>
+                <Button HorizontalAlignment="Left" Margin="196,43,0,0" VerticalAlignment="Top" FontSize="14" Content="Сброс фильтра" Click="DeleteFilter_Button"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="UpdateTovar" Header="Обновление товара" Grid.Row="2" Margin="322,0,0,10" HorizontalAlignment="Left" Width="179" Height="114" VerticalAlignment="Bottom">
+            <Grid>
+                <Button Content="Обновить товар" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="18" Click="UpdateKolToy_Button" Width="141"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="DeleteTovar" Header="Удаление пустых товаров" Grid.Row="2" Margin="501,0,0,10" HorizontalAlignment="Left" Width="184" Height="114" VerticalAlignment="Bottom">
+            <Grid>
+                <Button Content="Удаление" HorizontalAlignment="Left" Margin="36,0,0,0" VerticalAlignment="Center" FontSize="16" Click="DeleteNull_Button" Width="92"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
