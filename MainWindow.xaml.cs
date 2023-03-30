@@ -1,4 +1,5 @@
-﻿using PrimerBD;
+﻿using Prakt18_praktika_;
+using PrimerBD;
 using PrimerBTN;
 using System;
 using System.Collections.Generic;
@@ -149,7 +150,7 @@ namespace Prakt18_praktika_
         {
             PasswordWindow passwordWindow = new PasswordWindow();
             passwordWindow.ShowDialog();
-            label.Content += $"{DataBtn.Familia} {DataBtn.Name} {DataBtn.Otchestvo}";
+            label.Content += $" {DataBtn.Familia} {DataBtn.Name} {DataBtn.Otchestvo}!";
             if (DataBtn.Login == false) Close();
             if (DataBtn.Right == "Администратор");
             if (DataBtn.Right == "Модератор")
@@ -168,7 +169,6 @@ namespace Prakt18_praktika_
                 DeleteTovar.IsEnabled = false;
                 UpdateTovar.IsEnabled = false;
             }
-            mainwindow.Title = DataBtn.Familia + " " + DataBtn.Name + " " + DataBtn.Otchestvo + " - " + DataBtn.Right;
         }
 
         private void Relogin_Click(object sender, RoutedEventArgs e)
@@ -178,15 +178,6 @@ namespace Prakt18_praktika_
         }
     }
 }
-
-
-//private DetdomEntities context;
-//public DetdomEntities GetContext()
-//{
-//    if (context == null)
-//        null = new DetdomEntities();
-//    return context;
-//}
 
 namespace PrimerBD
 {
@@ -204,5 +195,13 @@ namespace PrimerBTN
         public static string Name;
         public static string Otchestvo;
         public static string Right;
+    }
+}
+
+namespace PrimerBTS
+{
+    public static class DataBasic
+    {
+        public static Toy bs;
     }
 }
