@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prakt18_praktika_"
         mc:Ignorable="d"
-        Title="MainWindow" x:Name="mainwindow" Height="481" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" MinHeight="481" MinWidth="800" Initialized="Window_Initialized">
+        Title="MainWindow" x:Name="mainwindow" Height="512" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" MinHeight="481" MinWidth="800" Initialized="Window_Initialized">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="321*"/>
-            <RowDefinition Height="124.04"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="337*"/>
+            <RowDefinition Height="137.04"/>
         </Grid.RowDefinitions>
         <Menu Margin="0,1,0,1">
             <MenuItem Header="Таблица" x:Name="tab1">
@@ -20,6 +20,7 @@
                 <MenuItem Header="Удалить" Click="DeleteToy_Button"></MenuItem>
                 <MenuItem Header="Сбросить фильтр" Click="DeleteFilter_Button"></MenuItem>
             </MenuItem>
+            <MenuItem Header="Выйти из аккаунта" Click="Relogin_Click"></MenuItem>
             <MenuItem Header="Справка" Click="Spravka"></MenuItem>
             <MenuItem Header="Выход" Click="Quit"></MenuItem>
         </Menu>
@@ -34,7 +35,7 @@
                 <DataGridTextColumn Width="12*" Header="Город Произод." Binding="{Binding CityFactory}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <GroupBox Header="Сортировка" Grid.Row="2" Margin="0,0,0,10" HorizontalAlignment="Left" Width="317" Height="111" VerticalAlignment="Bottom">
+        <GroupBox Header="Сортировка" Grid.Row="2" Margin="0,0,0,40" HorizontalAlignment="Left" Width="317" Height="94" VerticalAlignment="Bottom">
             <Grid>
                 <Button Content="Цена &gt;500 руб." HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" FontSize="16" Click="SortPrice_Button"/>
                 <Button Content="Общ.с огр. ответств" HorizontalAlignment="Left" Margin="26,40,0,0" VerticalAlignment="Top" FontSize="16" Click="ProizvodFilter_Button"/>
@@ -42,15 +43,16 @@
                 <Button HorizontalAlignment="Left" Margin="196,43,0,0" VerticalAlignment="Top" FontSize="14" Content="Сброс фильтра" Click="DeleteFilter_Button"/>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="UpdateTovar" Header="Обновление товара" Grid.Row="2" Margin="322,0,0,10" HorizontalAlignment="Left" Width="179" Height="114" VerticalAlignment="Bottom">
+        <GroupBox x:Name="UpdateTovar" Header="Обновление товара" Grid.Row="2" Margin="322,0,0,37" HorizontalAlignment="Left" Width="179" Height="97" VerticalAlignment="Bottom">
             <Grid>
                 <Button Content="Обновить товар" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="18" Click="UpdateKolToy_Button" Width="141"/>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="DeleteTovar" Header="Удаление пустых товаров" Grid.Row="2" Margin="501,0,0,10" HorizontalAlignment="Left" Width="184" Height="114" VerticalAlignment="Bottom">
+        <GroupBox x:Name="DeleteTovar" Header="Удаление пустых товаров" Grid.Row="2" Margin="501,0,0,37" HorizontalAlignment="Left" Width="184" Height="97" VerticalAlignment="Bottom">
             <Grid>
                 <Button Content="Удаление" HorizontalAlignment="Left" Margin="36,0,0,0" VerticalAlignment="Center" FontSize="16" Click="DeleteNull_Button" Width="92"/>
             </Grid>
         </GroupBox>
+        <Label x:Name="label" Content="Здравствуйте," HorizontalAlignment="Left" Margin="10,105,0,0" Grid.Row="2" VerticalAlignment="Top" Width="348" Height="26"/>
     </Grid>
 </Window>

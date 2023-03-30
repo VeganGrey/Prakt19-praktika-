@@ -149,8 +149,9 @@ namespace Prakt18_praktika_
         {
             PasswordWindow passwordWindow = new PasswordWindow();
             passwordWindow.ShowDialog();
+            label.Content += $"{DataBtn.Familia} {DataBtn.Name} {DataBtn.Otchestvo}";
             if (DataBtn.Login == false) Close();
-            if (DataBtn.Right == "Администратор") ;
+            if (DataBtn.Right == "Администратор");
             if (DataBtn.Right == "Модератор")
             {
                 tab1.IsEnabled = false;
@@ -168,6 +169,12 @@ namespace Prakt18_praktika_
                 UpdateTovar.IsEnabled = false;
             }
             mainwindow.Title = DataBtn.Familia + " " + DataBtn.Name + " " + DataBtn.Otchestvo + " - " + DataBtn.Right;
+        }
+
+        private void Relogin_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
     }
 }
