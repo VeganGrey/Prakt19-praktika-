@@ -31,7 +31,7 @@ namespace Prakt18_praktika_
         }
         DispatcherTimer _timer;
         int _countLogin = 1;
-        DetdomEntities db = DetdomEntities.GetContext();
+        DetDomContext db = DetDomContext.GetContext();
         DateTime time1 = new DateTime(3000, 12, 12);
 
         void Captcha()

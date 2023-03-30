@@ -24,7 +24,7 @@ namespace Prakt18_praktika_
             InitializeComponent();
         }
 
-        DetdomEntities db = DetdomEntities.GetContext();
+        DetDomContext db = DetDomContext.GetContext();
         Toy toy = new Toy();
 
         private void Qiut(object sender, RoutedEventArgs e)

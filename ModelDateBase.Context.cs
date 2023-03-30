@@ -13,10 +13,10 @@ namespace Prakt18_praktika_
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DetdomEntities : DbContext
+    public partial class DetdomEntities1 : DbContext
     {
-        public DetdomEntities()
-            : base("name=DetdomEntities")
+        public DetdomEntities1()
+            : base("name=DetdomEntities1")
         {
         }
     
@@ -25,16 +25,9 @@ namespace Prakt18_praktika_
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Toy> Toys { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Toy> Toys { get; set; }
         public virtual DbSet<User> Users { get; set; }
-
-        private static DetdomEntities context;
-        public static DetdomEntities GetContext()
-        {
-            if (context == null)
-                context = new DetdomEntities();
-            return context;
-        }
     }
 }

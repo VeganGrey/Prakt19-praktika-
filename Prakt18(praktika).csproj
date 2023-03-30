@@ -67,28 +67,42 @@
     <Compile Include="AddToy.xaml.cs">
       <DependentUpon>AddToy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetDomContext.cs" />
     <Compile Include="EditToy.xaml.cs">
       <DependentUpon>EditToy.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModelDataBase.cs">
+    <Compile Include="ModelDateBase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDataBase.tt</DependentUpon>
+      <DependentUpon>ModelDateBase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDateBase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDateBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDateBase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDateBase.edmx</DependentUpon>
     </Compile>
     <Compile Include="PasswordWindow.xaml.cs">
       <DependentUpon>PasswordWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>ModelDataBase.tt</DependentUpon>
+      <DependentUpon>ModelDateBase.tt</DependentUpon>
     </Compile>
     <Compile Include="SeeToy.xaml.cs">
       <DependentUpon>SeeToy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ModelDateBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Toy.cs">
-      <DependentUpon>ModelDataBase.tt</DependentUpon>
+      <DependentUpon>ModelDateBase.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>ModelDataBase.tt</DependentUpon>
+      <DependentUpon>ModelDateBase.tt</DependentUpon>
     </Compile>
     <Page Include="AddToy.xaml">
       <SubType>Designer</SubType>
@@ -120,16 +134,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelDataBase.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDataBase.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelDataBase.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDataBase.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -147,12 +151,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="ModelDataBase.edmx">
+    <EntityDeploy Include="ModelDateBase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelDataBase.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelDateBase.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelDataBase.edmx.diagram">
-      <DependentUpon>ModelDataBase.edmx</DependentUpon>
+    <None Include="ModelDateBase.edmx.diagram">
+      <DependentUpon>ModelDateBase.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -164,19 +168,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModelDataBase.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelDataBase.Context.cs</LastGenOutput>
-      <DependentUpon>ModelDataBase.edmx</DependentUpon>
-    </Content>
-    <Content Include="ModelDataBase.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelDataBase.edmx</DependentUpon>
-      <LastGenOutput>ModelDataBase.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="ModelDateBase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDateBase.edmx</DependentUpon>
+      <LastGenOutput>ModelDateBase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelDateBase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDateBase.edmx</DependentUpon>
+      <LastGenOutput>ModelDateBase.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

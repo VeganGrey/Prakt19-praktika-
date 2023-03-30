@@ -23,7 +23,7 @@ namespace Prakt18_praktika_
     /// </summary>
     public partial class MainWindow : Window
     {
-        DetdomEntities db = DetdomEntities.GetContext();
+        DetDomContext db = DetDomContext.GetContext();
         public MainWindow()
         {
             InitializeComponent();
