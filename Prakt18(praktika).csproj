@@ -67,6 +67,9 @@
     <Compile Include="AddToy.xaml.cs">
       <DependentUpon>AddToy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteFilter.xaml.cs">
+      <DependentUpon>DeleteFilter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DetDomContext.cs" />
     <Compile Include="EditToy.xaml.cs">
       <DependentUpon>EditToy.xaml</DependentUpon>
@@ -104,10 +107,17 @@
     <Compile Include="Toy.cs">
       <DependentUpon>ModelDateBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="UpdateFilter.xaml.cs">
+      <DependentUpon>UpdateFilter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>ModelDateBase.tt</DependentUpon>
     </Compile>
     <Page Include="AddToy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteFilter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SeeToy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateFilter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -4,6 +4,7 @@ using PrimerBTN;
 using PrimerBTS;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -109,43 +110,6 @@ namespace Prakt18_praktika_
             ToyCollection.ItemsSource = db.Toys.Local.ToBindingList();
         }
 
-        private void SortPrice_Button(object sender, RoutedEventArgs e)
-        {
-            var priceA1 = from p in db.Toys
-                          where p.Price > 500
-                          select p;
-            ToyCollection.ItemsSource = priceA1.ToList();
-        }
-
-        private void ProizvodFilter_Button(object sender, RoutedEventArgs e)
-        {
-            var proizvA1 = from p in db.Toys
-                           where p.FactoryName.StartsWith("ООО")
-                           select p;
-            ToyCollection.ItemsSource = proizvA1.ToList();
-        }
-
-        private void UpdateKolToy_Button(object sender, RoutedEventArgs e)
-        {
-            int numberIns = db.Database.ExecuteSqlCommand("UPDATE Toy SET Kol='10' WHERE Kol<10");
-            db.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-            ToyCollection.Items.Refresh();
-        }
-
-        private void DeleteNull_Button(object sender, RoutedEventArgs e)
-        {
-            int numberDel = db.Database.ExecuteSqlCommand("DELETE FROM Toy Where Kol=0");
-            db.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-            ToyCollection.Items.Refresh();
-        }
-
-        private void Price500Menee_Button(object sender, RoutedEventArgs e)
-        {
-            var priceA1 = from p in db.Toys
-                          where p.Price < 500
-                          select p;
-            ToyCollection.ItemsSource = priceA1.ToList();
-        }
 
         private void Window_Initialized(object sender, EventArgs e)
         {
@@ -161,14 +125,14 @@ namespace Prakt18_praktika_
             if (DataBtn.Right == "Пользователь")
             {
                 tab1.IsEnabled = false;
-                DeleteTovar.IsEnabled = false;
-                UpdateTovar.IsEnabled = false;
+                tabtab1.IsEnabled = false;
+                tabtab2.IsEnabled = false;
             }
             if (DataBtn.Right == "Клиент" )
             {
                 tab1.IsEnabled = false;
-                DeleteTovar.IsEnabled = false;
-                UpdateTovar.IsEnabled = false;
+                tabtab1.IsEnabled = false;
+                tabtab2.IsEnabled = false;
             }
         }
 
@@ -182,6 +146,26 @@ namespace Prakt18_praktika_
         {
             Poisk poisk = new Poisk();
             poisk.ShowDialog();
+            if (DataBasic.bs != null)
+            {
+                ToyCollection.ItemsSource = DataBasic.bs.ToList();
+            }
+        }
+
+        private void FiltAd_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateFilter udp = new UpdateFilter();
+            udp.ShowDialog();
+            db.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            ToyCollection.Items.Refresh();
+        }
+
+        private void FiltDel_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteFilter dl = new DeleteFilter();
+            dl.ShowDialog();
+            db.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            ToyCollection.Items.Refresh();
         }
     }
 }
@@ -209,6 +193,6 @@ namespace PrimerBTS
 {
     public static class DataBasic
     {
-        public static Toy bs;
+        public static System.Linq.IQueryable<Toy> bs;
     }
 }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prakt18_praktika_"
         mc:Ignorable="d"
-        Title="Выборка" Height="423" Width="514" ResizeMode="NoResize">
+        Title="Выборка" Height="423" Width="514" ResizeMode="CanMinimize">
     <Grid>
-        <GroupBox x:Name="Radius1" Header="Выборка по цене" Margin="40,18,0,328">
+        <GroupBox x:Name="Radius1" Header="Выборка по цене" Margin="40,18,0,318">
             <Grid>
                 <TextBox x:Name="Zena" HorizontalAlignment="Left" Margin="10,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                 <Button Content="Выборка" HorizontalAlignment="Left" Margin="242,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.483,0.52" Click="Find_Click"/>
@@ -15,7 +15,7 @@
         </GroupBox>
         <GroupBox x:Name="Radius2" Header="Выборка по Названию" Margin="40,74,0,253">
             <Grid>
-                <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+                <TextBox x:Name="Named" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
                 <Button Content="Выборка" HorizontalAlignment="Left" Margin="242,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.483,0.52" Click="Find_Click"/>
             </Grid>
         </GroupBox>

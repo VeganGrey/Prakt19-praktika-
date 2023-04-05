@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -84,44 +85,44 @@ namespace Prakt18_praktika_
             {
                 Int32.TryParse(Zena.Text,out int zen);
                 db.Toys.Load();
-                var pen = from p in db.Toys
-                        where p.Price == zen
-                        select p;
-                DataBasic.bs = (Toy)pen;
+                var pen =from p in db.Toys
+                            where p.Price == zen
+                            select p;
+                DataBasic.bs = pen;
             }
             if (R2.IsChecked == true)
             {
                 db.Toys.Load();
                 var pen = from p in db.Toys
-                          where p.Name == Name.Text
-                          select p;
-                DataBasic.bs = (Toy)pen;
+                                where p.Name == Named.Text
+                                select p;
+                DataBasic.bs = pen;
             }
             if (R3.IsChecked == true)
             {
                 Int32.TryParse(Kol.Text, out int kol);
                 db.Toys.Load();
                 var pen = from p in db.Toys
-                          where p.Price == kol
-                          select p;
-                DataBasic.bs = (Toy)pen;
+                                where p.Kol == kol
+                                select p;
+                DataBasic.bs = pen;
             }
             if (R4.IsChecked == true)
             {
                 db.Toys.Load();
                 var pen = from p in db.Toys
-                          where p.FactoryName == Factory.Text
-                          select p;
-                DataBasic.bs = (Toy)pen;
+                                where p.FactoryName == Factory.Text
+                                select p;
+                DataBasic.bs = pen;
             }
             if (R5.IsChecked == true)
             {
                 Int32.TryParse(Zena.Text, out int zen);
                 db.Toys.Load();
                 var pen = from p in db.Toys
-                          where p.CityFactory == Factory.Text
-                          select p;
-                DataBasic.bs = (Toy)pen;
+                                where p.CityFactory == City.Text
+                                select p;
+                DataBasic.bs = pen;
             }
             MessageBox.Show("Выборка применена","Информация",MessageBoxButton.OK);
             this.Close();
