@@ -1,6 +1,7 @@
 ﻿using Prakt18_praktika_;
 using PrimerBD;
 using PrimerBTN;
+using PrimerBTS;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -175,6 +176,12 @@ namespace Prakt18_praktika_
         {
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
+        }
+
+        private void Filter_Click(object sender, RoutedEventArgs e)
+        {
+            Poisk poisk = new Poisk();
+            poisk.ShowDialog();
         }
     }
 }

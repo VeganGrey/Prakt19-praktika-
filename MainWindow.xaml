@@ -20,11 +20,11 @@
                 <MenuItem Header="Удалить" Click="DeleteToy_Button"></MenuItem>
                 <MenuItem Header="Сбросить фильтр" Click="DeleteFilter_Button"></MenuItem>
             </MenuItem>
-            <!--<MenuItem Header="Запросы">
+            <MenuItem Header="Запросы">
                 <MenuItem Header="Выборка" Click="Filter_Click"></MenuItem>
-                <MenuItem Header="Добавление" Click="FiltAd_Click"></MenuItem>
-                <MenuItem Header="Удаление" Click="FiltDel_Click"></MenuItem>
-            </MenuItem>-->
+                <!--<MenuItem Header="Добавление" Click="FiltAd_Click"></MenuItem>
+                <MenuItem Header="Удаление" Click="FiltDel_Click"></MenuItem>-->
+            </MenuItem>
             <MenuItem Header="Выйти из аккаунта" Click="Relogin_Click"></MenuItem>
             <MenuItem Header="Справка" Click="Spravka"></MenuItem>
             <MenuItem Header="Выход" Click="Quit"></MenuItem>

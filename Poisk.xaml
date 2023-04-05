@@ -1,0 +1,49 @@
+﻿<Window x:Class="Prakt18_praktika_.Poisk"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prakt18_praktika_"
+        mc:Ignorable="d"
+        Title="Выборка" Height="423" Width="514" ResizeMode="NoResize">
+    <Grid>
+        <GroupBox x:Name="Radius1" Header="Выборка по цене" Margin="40,18,0,328">
+            <Grid>
+                <TextBox x:Name="Zena" HorizontalAlignment="Left" Margin="10,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Button Content="Выборка" HorizontalAlignment="Left" Margin="242,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.483,0.52" Click="Find_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Radius2" Header="Выборка по Названию" Margin="40,74,0,253">
+            <Grid>
+                <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+                <Button Content="Выборка" HorizontalAlignment="Left" Margin="242,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.483,0.52" Click="Find_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Radius3" Header="Выборка по Количеству" Margin="40,154,0,159">
+            <Grid>
+                <TextBox x:Name="Kol" HorizontalAlignment="Left" Margin="10,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Button Content="Выборка" HorizontalAlignment="Left" Margin="243,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.483,0.52" Click="Find_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Radius4" Header="Выбора по Фабрике" Margin="40,233,0,82">
+            <Grid>
+                <TextBox x:Name="Factory" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+                <Button Content="Выборка" HorizontalAlignment="Left" Margin="242,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.483,0.52" Click="Find_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Radius5" Header="Выборка по Городу проивездства" Margin="40,318,0,0">
+            <Grid>
+                <TextBox x:Name="City" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+                <Button Content="Выборка" HorizontalAlignment="Left" Margin="242,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.483,0.52" Click="Find_Click"/>
+            </Grid>
+        </GroupBox>
+        <RadioButton x:Name="R2" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Checked="R2_Checked" />
+        <RadioButton x:Name="R3" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Checked="R3_Checked"/>
+        <RadioButton x:Name="R4" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Checked="R4_Checked"/>
+        <RadioButton x:Name="R5" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Checked="R5_Checked"/>
+        <RadioButton x:Name="R1" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Checked="R1_Checked" IsChecked="True"/>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Отмена" Click="Qiut_Click"></MenuItem>
+        </Menu>
+    </Grid>
+</Window>
